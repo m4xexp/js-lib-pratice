@@ -1,22 +1,30 @@
 {
   "name": "@m4xexp/js-lib-practice",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
-  "repository": "https://github.com/m4xexp/js-lib-pratice.git",
-  "author": "Parames Ajhan <parames.a@dia.co.th>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4xexp/js-lib-pratice.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Parames Ajhan <parames.m4xexp@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "jest",
     "build": "yarn build:cjs && yarn build:esm",
     "build:esm": "babel -d dist/esm/ src/ --ignore 'src/**/*.spec.js','src/**/*.test.js'",
-    "build:cjs": "babel --delete-dir-on-start --env-name cjs -d dist/ src/"
+    "build:cjs": "babel --delete-dir-on-start --env-name cjs -d dist/ src/",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@babel/cli": "7.17.6",
     "@babel/core": "7.17.5",
     "@babel/preset-env": "7.16.11",
-    "jest": "27.5.1"
+    "jest": "27.5.1",
+    "semantic-release": "^19.0.2"
   },
   "dependencies": {
     "lodash": "4.17.21"
